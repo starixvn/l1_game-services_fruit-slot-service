@@ -1,0 +1,170 @@
+export const chips = [2000, 1000, 500, 200, 100, 50, 10, 5, 1];
+export const choiceNames = {
+    bar: "bar",
+    tripleSeven: "tripleSeven",
+    watermelon: "watermelon",
+    star: "star",
+    bell: "bell",
+    orange: "orange",
+    lemon: "lemon",
+    cherry: "cherry",
+    big: "big",
+    small: "small",
+    bar25: "bar25",
+    tripleSeven3: "tripleSeven3",
+    watermelon3: "watermelon3",
+    star3: "star3",
+    bell3: "bell3",
+    orange3: "orange3",
+    lemon3: "lemon3",
+    cherry3: "cherry3",
+    bar50: "bar50",
+    lucky: "lucky",
+};
+
+export const symbolBetChoiceTable = [
+    {
+        name: choiceNames.bar,
+        odds: 100,
+        count: 4,
+        canBet: true,
+        relatedChoices: [choiceNames.bar25, choiceNames.bar50],
+    },
+    {
+        name: choiceNames.bar50,
+        odds: 50,
+        count: 8,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.bar25,
+        odds: 25,
+        count: 16,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.tripleSeven,
+        odds: 40,
+        count: 15,
+        canBet: true,
+        relatedChoices: [choiceNames.tripleSeven3],
+    },
+    {
+        name: choiceNames.tripleSeven3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.star,
+        odds: 30,
+        count: 20,
+        canBet: true,
+        relatedChoices: choiceNames.star3,
+    },
+    {
+        name: choiceNames.star3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.watermelon,
+        odds: 20,
+        count: 30,
+        canBet: true,
+        relatedChoices: choiceNames.watermelon3,
+    },
+    {
+        name: choiceNames.watermelon3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.bell,
+        odds: 20,
+        count: 30,
+        canBet: true,
+        relatedChoices: choiceNames.bell3,
+    },
+    {
+        name: choiceNames.bell3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.lemon,
+        odds: 15,
+        count: 40,
+        canBet: true,
+        relatedChoices: choiceNames.lemon3,
+    },
+    {
+        name: choiceNames.lemon3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.orange,
+        odds: 10,
+        count: 60,
+        canBet: true,
+        relatedChoices: choiceNames.orange3,
+    },
+    {
+        name: choiceNames.orange3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.cherry,
+        odds: 5,
+        count: 120,
+        canBet: true,
+        relatedChoices: choiceNames.cherry3,
+    },
+    {
+        name: choiceNames.cherry3,
+        odds: 3,
+        count: 200,
+        canBet: false,
+        relatedChoices: [],
+    },
+];
+
+export const bigSmallBetChoiceTable = [
+    {
+        name: choiceNames.big,
+        odds: 2,
+        count: 100,
+        canBet: true,
+        relatedChoices: [],
+    },
+    {
+        name: choiceNames.small,
+        odds: 2,
+        count: 100,
+        canBet: true,
+        relatedChoices: [],
+    },
+];
+
+export const choicesTableCollection = symbolBetChoiceTable.concat(bigSmallBetChoiceTable);
+
+export const ratioModes = {
+    1: 0.24,
+    2: 0.21,
+    3: 0.18,
+};
