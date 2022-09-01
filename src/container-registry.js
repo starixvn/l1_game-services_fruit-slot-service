@@ -2,8 +2,10 @@ import awilix from "awilix";
 import { Table } from "sc-game-base";
 
 import { fruitSlotRounds, fruitSlotTemptBets, fruitSlotBets, fruitSlotBetLogs } from "./models";
-import { SettleGameRoundConsumer } from "./consumers";
-import { GameCron, ProcessBetQueue, Bot } from "./crons";
+import { SettleGameRoundConsumer } from "sc-slot-rng-game-base/src/consumers";
+import { Bot } from "./crons";
+import { GameCron } from "sc-slot-rng-game-base/src/crons";
+import ProcessBetQueue from "sc-slot-rng-game-base/src/crons/process-bet-queue";
 
 const { asClass, asValue } = awilix;
 

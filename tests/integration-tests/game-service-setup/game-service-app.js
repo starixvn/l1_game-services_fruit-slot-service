@@ -4,15 +4,13 @@ import { initAPIStub, stubUserService } from "sc-game-service-integration-utils"
 import appConfigs from "../../../src/app-configs.IGT";
 import gameSettings from "./game-settings";
 import ContainerRegistry from "../../../src/container-registry";
-import GameDefinition from "../../../src/game-definition";
-import { generateResult, getSettlementResult } from "../../../src/helpers/result-helper";
-import { GameData } from "../../../src/game-data";
+import { GameData, GameDefinition, ResultHelper } from "sc-slot-rng-game-base";
 
 export const run = async () => {
     initAPIStub(appConfigs.apiSettings.apiUrl);
     stubUserService(appConfigs);
 
-    const definition = new GameDefinition(gameSettings, generateResult, getSettlementResult);
+    const definition = new GameDefinition(gameSettings, ResultHelper.generateResult, ResultHelper.getSettlementResult);
     const gameData = new GameData(gameSettings.durations.wholeRound);
     const container = new ContainerRegistry().register(appConfigs, definition, gameData);
     const app = new Core.BaseGameApp("Fruit Slot", appConfigs);
