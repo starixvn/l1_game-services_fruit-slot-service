@@ -13,6 +13,9 @@ export default class GameDefinition extends Core.GameDefinition {
             historyPageSize = 8,
             luckySymbolAnimationTime = 2,
             luckyRoundDuration = 2,
+            ratioModes = {},
+            symbolBetChoiceTable = [],
+            initialSettlement = {},
         },
         generateResult,
         settle
@@ -24,5 +27,8 @@ export default class GameDefinition extends Core.GameDefinition {
         );
         this.luckySymbolAnimationTime = luckySymbolAnimationTime;
         this.luckyRoundDuration = luckyRoundDuration;
+        this.ratioModes = ratioModes;
+        this.symbolBetChoiceTable = symbolBetChoiceTable;
+        this.initialSettlement = initialSettlement;
     }
 }

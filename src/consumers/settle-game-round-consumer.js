@@ -1,6 +1,6 @@
 import { Core } from "sc-game-base";
-import { choiceNames, ratioModes, choicesTableCollection } from "../constants";
 
+const luckyChoice = "lucky";
 export default class SettleGameRoundConsumer extends Core.BaseEventConsumers.SettleGameRoundConsumer {
     constructor({ definition, gameData, roundResultPublisher, userBetResultPublisher, endGame, roundsRepository, betsRepository }) {
         super({ definition, gameData, roundResultPublisher, userBetResultPublisher, endGame, roundsRepository, betsRepository });
@@ -10,8 +10,9 @@ export default class SettleGameRoundConsumer extends Core.BaseEventConsumers.Set
         const { gameConfigs } = this.gameData;
         const { randomMode, slotRNGConfig } = gameConfigs;
         const { luckySpinFrom, luckySpinTo, mode } = slotRNGConfig;
+        const { generateResult, ratioModes, symbolBetChoiceTable } = this.definition;
 
-        const { result } = this.definition.generateResult(ratioModes[mode], luckySpinFrom, luckySpinTo, randomMode);
+        const { result } = generateResult(symbolBetChoiceTable, ratioModes[mode], luckySpinFrom, luckySpinTo, randomMode);
         const numberOfSymbols = result.symbol.length;
         this.gameData.numberOfLuckyRounds = numberOfSymbols === 1 ? 0 : numberOfSymbols - 1;
 
@@ -25,7 +26,7 @@ export default class SettleGameRoundConsumer extends Core.BaseEventConsumers.Set
         try {
             const betResult = Object.entries(settlementResult).reduce(
                 (result, [subChoice, win]) => {
-                    if (subChoice === choiceNames.lucky) {
+                    if (subChoice === luckyChoice) {
                         return result;
                     }
 
@@ -73,9 +74,10 @@ export default class SettleGameRoundConsumer extends Core.BaseEventConsumers.Set
 
     async settleRound() {
         try {
+            const { settle, initialSettlement } = this.definition;
             const result = await this.generateResult();
 
-            const settlementResult = this.definition.settle(result);
+            const settlementResult = settle(result, initialSettlement);
             const { roundId, exchangeRates } = this.gameData;
 
             const newRound = await this.roundsRepository.create({
@@ -105,7 +107,7 @@ export default class SettleGameRoundConsumer extends Core.BaseEventConsumers.Set
     }
 
     getMainchoice(choiceName) {
-        const subChoice = choicesTableCollection.find((choice) => choice.relatedChoices.includes(choiceName));
+        const subChoice = this.definition.symbolBetChoiceTable.find((choice) => choice.relatedChoices.includes(choiceName));
         return subChoice ? subChoice.name : choiceName;
     }
 }
