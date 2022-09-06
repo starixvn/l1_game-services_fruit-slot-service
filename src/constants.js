@@ -151,7 +151,7 @@ export const choicesMapper = Object.keys(choiceNames).reduce((mapper, choiceName
     return mapper;
 }, {});
 
-export const initialSettlement = Object.keys(choiceNames).reduce((settlement, choiceName) => {
+export const defaultSettlementResult = Object.keys(choiceNames).reduce((settlement, choiceName) => {
     settlement[choiceName] = false;
     return settlement;
 }, {});

@@ -1,4 +1,4 @@
-import { choiceNames, initialSettlement, choicesMapper, hedgeBetGroups, symbolBetChoiceTable } from "./constants";
+import { choiceNames, defaultSettlementResult, choicesMapper, hedgeBetGroups, symbolBetChoiceTable } from "./constants";
 
 export default {
     id: 59,
@@ -14,7 +14,7 @@ export default {
     numberOfRoundHistory: 100,
     luckySymbolAnimationTime: 2,
     luckyRoundDuration: 2,
-    initialSettlement,
+    defaultSettlementResult,
     symbolBetChoiceTable,
     ratioModes: {
         1: 0.24,
