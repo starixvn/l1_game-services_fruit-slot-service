@@ -24,6 +24,6 @@ afterAll(() => {
     processStartService.kill();
 });
 
-// signinTest();
-// ingameTest();
+signinTest();
+ingameTest();
 settleTest();
