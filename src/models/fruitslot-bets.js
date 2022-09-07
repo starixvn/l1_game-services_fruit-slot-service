@@ -42,6 +42,7 @@ const fruitSlotBets = mongoose.model(
 );
 
 const betLogsSchema = {
+    testContainer: { type: String },
     uid: { type: String, required: true },
     name: { type: String, required: true },
     roundId: { type: Number, required: true },
