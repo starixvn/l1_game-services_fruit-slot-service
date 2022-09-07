@@ -49,10 +49,7 @@ export default class Bot extends Table.Crons.TableGameBot {
 
         const underRatioGroups = helpers.arrayHelper.shuffle(betChoiceRatios.filter((data) => data.underBetRatio));
 
-        const choice =
-            underRatioGroups.length > 0
-                ? this.getRandomChoiceFromGroup(underRatioGroups[0].group)
-                : this.getRandomChoiceFromGroup(this.mainOpts);
+        const choice = this.getRandomChoiceFromGroup(underRatioGroups.length > 0 ? underRatioGroups[0].group : this.mainOpts);
 
         const previousUniqueChoices = bot.choices.filter((betChoice) => this.mainOpts.includes(betChoice));
 
