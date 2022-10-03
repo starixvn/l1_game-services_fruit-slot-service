@@ -4,7 +4,7 @@ import {
     choicesMapper,
     hedgeBetGroups,
     symbolBetChoiceTable,
-    symbolPositonsMapper,
+    symbolPositionsMapper,
 } from "./constants";
 
 export default {
@@ -23,7 +23,7 @@ export default {
     luckyRoundDuration: 2,
     defaultSettlementResult,
     symbolBetChoiceTable,
-    symbolPositonsMapper,
+    symbolPositionsMapper,
     ratioModes: {
         1: 0.24,
         2: 0.21,
