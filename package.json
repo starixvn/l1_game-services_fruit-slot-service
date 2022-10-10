@@ -23,7 +23,7 @@
     "type": "module",
     "dependencies": {
         "nodemon": "^2.0.4",
-        "sc-slot-rng-game-base": "1.0.0-beta.15"
+        "sc-slot-rng-game-base": "1.0.0-beta.17"
     },
     "resolutions": {
         "sc-game-base": "3.0.6",

@@ -6,7 +6,7 @@ export default class Bot extends Table.Crons.TableGameBot {
     constructor(definition, gameData, publisher, userInfosRepository, tempBetsRepository) {
         super(definition, gameData, publisher, userInfosRepository, tempBetsRepository);
 
-        this.betChoiceRatio = { Main: 10, BigSmall: 3 };
+        this.betChoiceRatio = { Main: 80, BigSmall: 20 };
         this.mainOpts = ["bar", "tripleSeven", "watermelon", "star", "bell", "orange", "lemon", "cherry"];
         this.bigSmallOpts = ["big", "small"];
     }
@@ -49,11 +49,7 @@ export default class Bot extends Table.Crons.TableGameBot {
 
         const underRatioGroups = helpers.arrayHelper.shuffle(betChoiceRatios.filter((data) => data.underBetRatio));
 
-        const choice = this.getRandomChoiceFromGroup(underRatioGroups.length > 0 ? underRatioGroups[0].group : this.mainOpts);
-
-        const previousUniqueChoices = bot.choices.filter((betChoice) => this.mainOpts.includes(betChoice));
-
-        return previousUniqueChoices.length > 0 ? previousUniqueChoices[0] : choice;
+        return this.getRandomChoiceFromGroup(underRatioGroups.length > 0 ? underRatioGroups[0].group : this.mainOpts);
     }
 
     getMaxBet(bot, choice) {
@@ -78,21 +74,14 @@ export default class Bot extends Table.Crons.TableGameBot {
 
     getTotalAmountOnChoiceGroup(choices) {
         let total = 0;
-        choices.forEach((choice) => (total += this.allBets[choice]));
-
-        return total;
-    }
-
-    getTotalAmountOfBotOnChoiceGroup(bot, choices) {
-        let total = 0;
-        choices.forEach((choice) => (total += bot.betOnChoices[choice]));
+        choices.forEach((choice) => (total += this.allBets[choice] ?? 0));
 
         return total;
     }
 
     getAllBetAmount() {
         let total = 0;
-        this.definition.choices.forEach((choice) => (total += this.allBets[choice]));
+        this.definition.choices.forEach((choice) => (total += this.allBets[choice] ?? 0));
 
         return total;
     }
@@ -101,5 +90,16 @@ export default class Bot extends Table.Crons.TableGameBot {
         const chipList = chips.filter((chip) => amount / chip >= 1);
 
         return chipList.length > 0 ? chipList[0] : this.getMinBet();
+    }
+
+    isSmallTicket(amount) {
+        return amount <= this.getMinBet() * 50;
+    }
+
+    updateBotInRoomData(bot, choice, amount, balance) {
+        super.updateBotInRoomData(bot, choice, amount, balance);
+
+        this.allBets[choice] = this.allBets[choice] ? this.allBets[choice] + amount : amount;
+        this.smallTickets += this.isSmallTicket(amount) ? 1 : 0;
     }
 }
