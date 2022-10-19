@@ -19,6 +19,7 @@ export default {
     choicesMapper,
     hedgeBetGroups,
     numberOfRoundHistory: 100,
+    historyPageSize: 7,
     luckyRoundDuration: 4,
     defaultSettlementResult,
     symbolBetChoiceTable,
