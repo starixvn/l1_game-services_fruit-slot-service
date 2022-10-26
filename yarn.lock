@@ -8303,10 +8303,10 @@ sc-semantic-release@^1.1.0:
   resolved "http://npm.lumigame.com/sc-semantic-release/-/sc-semantic-release-1.2.0.tgz#52ea7bd1aa4d5c41315a16c2c4e4f0437befdbcb"
   integrity sha512-izZqZiS8hL05cGzYbcR3+GZ1Oktr9rU1nIL05S9mZnEBm5nZfqzRkSpR2OHVJARjYsMI5dps0oUX1HjFV9x47w==
 
-sc-slot-rng-game-base@1.0.0-beta.22:
-  version "1.0.0-beta.22"
-  resolved "http://npm.lumigame.com/sc-slot-rng-game-base/-/sc-slot-rng-game-base-1.0.0-beta.22.tgz#c4c6b50255fd0efe9c72ac55f7084b17b2dc7928"
-  integrity sha512-LVmVY4ih4lkhJWN5/bQ/Bwj+Yj5a9amNCZX4StG15KuCblxNqxqvSR/ZAo7TPxEnk5/Ikpe490GPNHuDyx/ZLQ==
+sc-slot-rng-game-base@1.0.0-beta.23:
+  version "1.0.0-beta.23"
+  resolved "http://npm.lumigame.com/sc-slot-rng-game-base/-/sc-slot-rng-game-base-1.0.0-beta.23.tgz#18613f1cf3e29c2ff561a4d0a35b12ce4966f698"
+  integrity sha512-pO6tOcbb55LcNwS+Ww8x8Ys39BmVx8Y++seJrkY7L6xzPJFDuaks5qWbZzsHsGC1SipDtiFmxvZUXnTsHohlwA==
   dependencies:
     chance "^1.1.7"
     sc-game-base "3.0.6"
