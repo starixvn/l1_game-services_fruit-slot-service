@@ -8178,10 +8178,10 @@ sc-base-apis@1.18.0:
     sc-base-database "1.10.1"
     sc-common "1.8.1"
 
-sc-base-database@1.10.1, sc-base-database@1.11.2-beta.0:
-  version "1.11.2-beta.0"
-  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.11.2-beta.0.tgz#4c146cc2348acb3402bf7feb2defb3b9ee8fcbef"
-  integrity sha512-04MHxVQVCIsfWFGrcAXuD6O/m4bFxXZaxWI7mlfQu01fJrslDLOuizdWQxdYtneBtvnESVqS7WRx7SsyUmGDCA==
+sc-base-database@1.10.1, sc-base-database@1.11.1-beta.0:
+  version "1.11.1-beta.0"
+  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.11.1-beta.0.tgz#c674e1e60adb656972b719b59e24d8f495a922c2"
+  integrity sha512-J2t/pPEIKrPJQS+ZtbgUSSVRejgDp32HIeku2WGZhD48dZ+10rq3Aw4DW8Kg+Jv52YdCcWQ0A74b0ewVJLlsXg==
   dependencies:
     mongoose "^5.9.25"
     sc-common "1.8.1"
@@ -8197,7 +8197,7 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@3.1.1, sc-game-base@3.2.3:
+sc-game-base@3.2.3:
   version "3.2.3"
   resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-3.2.3.tgz#55ff2e880ec328c656f223c99caf38585478b3a9"
   integrity sha512-ZvCa8I8hO8OERuCKs9jTTmnCcccJzoHRCG31IcNRvgC9RryZ7RHRjdG5bRKLKGiFSaB53Nq4rZeQ/yYiCW4r0Q==
@@ -8221,14 +8221,14 @@ sc-game-base@3.1.1, sc-game-base@3.2.3:
     socket.io-msgpack-parser "^3.0.1"
     socket.io-prom-metrics "^1.0.3"
 
-sc-game-service-integration-utils@1.3.3:
-  version "1.3.3"
-  resolved "http://npm.lumigame.com/sc-game-service-integration-utils/-/sc-game-service-integration-utils-1.3.3.tgz#ae74998fb11271f535f567c879c76b08d28de8d1"
-  integrity sha512-lp7ymA0EkYSkRl8LjO72SxwOKFc0OGLtxzRA7AlPztYLYrHEPPGc/crcpunhEU1CZDIbxBOxquM9Mvczd/xnzA==
+sc-game-service-integration-utils@1.3.5:
+  version "1.3.5"
+  resolved "http://npm.lumigame.com/sc-game-service-integration-utils/-/sc-game-service-integration-utils-1.3.5.tgz#9bb12d875c25c64dcf022b1fc5754bd8d9824359"
+  integrity sha512-JGhxkNc+BCH8+OyuZLZVllYAqBmclVaiowIfSxERNiSwlA7bdzVoHzJVPCbcXQ4+vSmlj7A2DeXow8Cqq+YUyw==
   dependencies:
     lodash.matches "^4.6.0"
     nock "^13.2.1"
-    sc-game-base "3.1.1"
+    sc-game-base "3.2.3"
     socket.io-client "^4.4.0"
 
 sc-semantic-release@^1.1.0:

@@ -23,7 +23,6 @@ const temptBetSchema = {
     time: { type: Date },
     odds: { type: Object, require: true },
 
-    memberId: { type: Number, require: true },
     playerId: { type: Number, require: true },
     siteId: { type: String, require: true },
     freeBet: { type: Boolean, default: false },

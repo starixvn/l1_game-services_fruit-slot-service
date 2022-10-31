@@ -51,20 +51,20 @@ export const settleTest = () => {
             });
         });
 
-        // it("should return settled finish data", (done) => {
-        //     // Arrange & Act
-        //     const client = new GameClientDriver(socketOptions, initUserSession(normalUser));
-        //     client.handleSignedInEvent(() => {
-        //         client.sendInGameEvent();
-        //     });
+        it("should return settled finish data", (done) => {
+            // Arrange & Act
+            const client = new GameClientDriver(socketOptions, initUserSession(normalUser));
+            client.handleSignedInEvent(() => {
+                client.sendInGameEvent();
+            });
 
-        //     // Assert
-        //     client.on(socketOptions.gameName, (data) => {
-        //         if (data.finish) {
-        //             client.close();
-        //             done();
-        //         }
-        //     });
-        // });
+            // Assert
+            client.on(socketOptions.gameName, (data) => {
+                if (data.finish) {
+                    client.close();
+                    done();
+                }
+            });
+        });
     });
 };
