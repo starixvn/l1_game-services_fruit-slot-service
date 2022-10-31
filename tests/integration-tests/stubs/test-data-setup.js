@@ -47,8 +47,8 @@ export const createTestData = async () => {
     process.exit(0);
 };
 
-const getUserId = async (memberId) => {
-    const user = await users.findOne({ "local.memberId": memberId }, { _id: true }).lean();
+const getUserId = async (playerId) => {
+    const user = await users.findOne({ "local.playerId": memberId }, { _id: true }).lean();
     return user._id.toString();
 };
 

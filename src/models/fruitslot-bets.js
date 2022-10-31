@@ -4,7 +4,6 @@ const temptBetSchema = {
     uid: { type: String, required: true },
     name: { type: String, required: true },
     roundId: { type: Number, required: true },
-    phien: { type: Number, required: true },
 
     bar: { type: Number, default: 0 },
     tripleSeven: { type: Number, default: 0 },
@@ -22,11 +21,11 @@ const temptBetSchema = {
     paid: { type: Boolean, default: false },
     betwin: { type: Number, default: 0 },
     time: { type: Date },
-    odds: { type: Object },
+    odds: { type: Object, require: true },
 
-    memberId: { type: Number },
-    playerId: { type: Number },
-    siteId: { type: String },
+    memberId: { type: Number, require: true },
+    playerId: { type: Number, require: true },
+    siteId: { type: String, require: true },
     freeBet: { type: Boolean, default: false },
 };
 
@@ -45,19 +44,18 @@ const betLogsSchema = {
     uid: { type: String, required: true },
     name: { type: String, required: true },
     roundId: { type: Number, required: true },
-    phien: { type: Number, required: true },
 
-    amount: { type: Number, default: 0 },
-    choice: { type: String },
-    subChoices: { type: Array },
+    amount: { type: Number, default: 0, require: true },
+    choice: { type: String, require: true },
+    subChoices: { type: Array, require: true },
     time: { type: Date },
     clientSentTime: { type: Date },
     receivedTime: { type: Date },
-    odds: { type: Object },
+    odds: { type: Object, require: true },
 
-    playerId: { type: Number },
+    playerId: { type: Number, require: true },
     operatorId: { type: String, require: true },
-    siteId: { type: String },
+    siteId: { type: String, require: true },
     freeBet: { type: Boolean, default: false },
 };
 
