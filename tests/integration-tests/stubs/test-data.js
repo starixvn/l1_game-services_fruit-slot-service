@@ -109,6 +109,7 @@ const rounds = [
             big: true,
             small: false,
         },
+        exchangeRateId: 4816,
     },
     {
         id: 1190120,
@@ -135,6 +136,7 @@ const rounds = [
             big: true,
             small: false,
         },
+        exchangeRateId: 4816,
     },
 ];
 
@@ -146,7 +148,7 @@ const userBetData = (uid) => {
             playerId: 1,
             name: "NormalUser",
             odds: gameConfig.odds,
-            operaterId: "dummy-partner-id",
+            operatorId: "dummy-partner-id",
             currency: "$US",
             siteId: "111",
             rate: 1,
@@ -170,7 +172,7 @@ const userBetData = (uid) => {
             playerId: 4,
             name: "NormalUser",
             odds: gameConfig.odds,
-            operaterId: "dummy-partner-id",
+            operatorId: "dummy-partner-id",
             siteId: "111",
             thanhtoan: true,
             rate: 1,
@@ -203,7 +205,7 @@ const userBetLogsData = (uid) => {
             currency: "$US",
             playerId: 1,
             odds: gameConfig.odds,
-            operaterId: "dummy-partner-id",
+            operatorId: "dummy-partner-id",
             siteId: "111",
             rate: 1,
         },
