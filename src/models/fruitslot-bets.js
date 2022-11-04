@@ -49,9 +49,9 @@ const betLogsSchema = {
     clientSentTime: { type: Date },
     receivedTime: { type: Date },
 
-    playerId: { type: Number },
-    operatorId: { type: String },
-    siteId: { type: String },
+    playerId: { type: Number, required: true },
+    operatorId: { type: String, required: true },
+    siteId: { type: String, required: true },
     freeBet: { type: Boolean },
 };
 
