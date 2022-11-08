@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const temptBetSchema = {
+const tempBetSchema = {
     uid: { type: String, required: true },
     name: { type: String, required: true },
     roundId: { type: Number, required: true },
@@ -21,13 +21,13 @@ const temptBetSchema = {
     paid: { type: Boolean, default: false },
     betwin: { type: Number, default: 0 },
     time: { type: Date },
-    odds: { type: Object, required: true },
+    odds: { type: Object, required: false },
 };
 
 const fruitSlotBets = mongoose.model(
     "fruitslot_bets",
     new mongoose.Schema({
-        ...temptBetSchema,
+        ...tempBetSchema,
         currency: { type: String, required: true },
         rate: { type: Number, required: true },
         operatorId: { type: String, required: true },
@@ -55,7 +55,7 @@ const betLogsSchema = {
     freeBet: { type: Boolean },
 };
 
-const fruitSlotTemptBets = mongoose.model("fruitslot_tmpbets", new mongoose.Schema(temptBetSchema));
+const fruitSlotTempBets = mongoose.model("fruitslot_tmpbets", new mongoose.Schema(tempBetSchema));
 const fruitSlotBetLogs = mongoose.model("fruitslot_betlogs", betLogsSchema);
 
-export { fruitSlotTemptBets, fruitSlotBets, fruitSlotBetLogs };
+export { fruitSlotTempBets, fruitSlotBets, fruitSlotBetLogs };

@@ -1,7 +1,7 @@
 import awilix from "awilix";
 import { Table, Core } from "sc-game-base";
 
-import { fruitSlotRounds, fruitSlotTemptBets, fruitSlotBets, fruitSlotBetLogs } from "./models";
+import { fruitSlotRounds, fruitSlotTempBets, fruitSlotBets, fruitSlotBetLogs } from "./models";
 import { SettleGameRoundConsumer } from "sc-slot-rng-game-base/src/consumers";
 import { Bot } from "./crons";
 import { GameCron } from "sc-slot-rng-game-base/src/crons";
@@ -27,7 +27,7 @@ export default class ContainerRegistry extends Table.TableContainerRegistry {
             roundsRepository: asValue(fruitSlotRounds),
             betsRepository: asValue(fruitSlotBets),
             betLogsRepository: asValue(fruitSlotBetLogs),
-            tempBetsRepository: asValue(fruitSlotTemptBets),
+            tempBetsRepository: asValue(fruitSlotTempBets),
         });
     }
 
