@@ -12,13 +12,15 @@ import { RebetContainerRegistry } from "sc-rebet-mode";
 const { asClass, asValue } = awilix;
 
 export default class ContainerRegistry extends Table.TableContainerRegistry {
-    // register(appConfigs, definition, gameData) {
-    //     super.register(appConfigs, definition, gameData);
+    register(appConfigs, definition, gameData) {
+        super.register(appConfigs, definition, gameData);
 
-    //     this.container.register(new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter, Crons.TableProcessBetQueue));
+        this.container.register(
+            new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter, Table.Crons.TableProcessBetQueue)
+        );
 
-    //     return this.container;
-    // }
+        return this.container;
+    }
 
     registerModels() {
         super.registerModels();
