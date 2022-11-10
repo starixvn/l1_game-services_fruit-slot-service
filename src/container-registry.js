@@ -4,20 +4,16 @@ import { Table, Core } from "sc-game-base";
 import { fruitSlotRounds, fruitSlotTempBets, fruitSlotBets, fruitSlotBetLogs } from "./models";
 import { SettleGameRoundConsumer } from "sc-slot-rng-game-base/src/consumers";
 import { Bot } from "./crons";
-import { GameCron } from "sc-slot-rng-game-base/src/crons";
-import ProcessBetQueue from "sc-slot-rng-game-base/src/crons/process-bet-queue";
+import { GameCron, ProcessBetQueue } from "sc-slot-rng-game-base/src/crons";
 import HistoryQuery from "sc-slot-rng-game-base/src/query-apis/history-query";
-import { RebetContainerRegistry } from "sc-rebet-mode";
-
+import RebetContainerRegistry from "./rebet-container-registry";
 const { asClass, asValue } = awilix;
 
 export default class ContainerRegistry extends Table.TableContainerRegistry {
     register(appConfigs, definition, gameData) {
         super.register(appConfigs, definition, gameData);
 
-        this.container.register(
-            new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter, Table.Crons.TableProcessBetQueue)
-        );
+        this.container.register(new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter, ProcessBetQueue));
 
         return this.container;
     }

@@ -34,7 +34,7 @@ export const symbolBetChoiceTable = [
     {
         name: choiceNames.bar50,
         odds: 50,
-        count: 8,
+        count: 7,
         canBet: false,
         relatedChoices: [],
     },

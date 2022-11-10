@@ -43,8 +43,8 @@ const betLogsSchema = {
     roundId: { type: Number, required: true },
 
     amount: { type: Number, default: 0, required: true },
-    choice: { type: String, required: true },
-    subChoices: { type: Array, required: true },
+    choice: { type: String },
+    subChoices: { type: Array },
     time: { type: Date },
     clientSentTime: { type: Date },
     receivedTime: { type: Date },
@@ -53,6 +53,7 @@ const betLogsSchema = {
     operatorId: { type: String, required: true },
     siteId: { type: String, required: true },
     freeBet: { type: Boolean },
+    rebet: { type: Boolean, default: false },
 };
 
 const fruitSlotTempBets = mongoose.model("fruitslot_tmpbets", new mongoose.Schema(tempBetSchema));
