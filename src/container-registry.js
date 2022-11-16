@@ -13,7 +13,7 @@ export default class ContainerRegistry extends Table.TableContainerRegistry {
     register(appConfigs, definition, gameData) {
         super.register(appConfigs, definition, gameData);
 
-        this.container.register(new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter, ProcessBetQueue));
+        this.container.register(new RebetContainerRegistry().registerTableGame(Core.Routers.BaseSocketRouter));
 
         return this.container;
     }
