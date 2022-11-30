@@ -53,6 +53,7 @@ const betLogsSchema = {
     operatorId: { type: String, required: true },
     siteId: { type: String, required: true },
     freeBet: { type: Boolean },
+    rate: { type: Number, required: true },
     rebet: { type: Boolean, default: false },
 };
 
