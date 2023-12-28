@@ -31,7 +31,7 @@ const fruitSlotBets = mongoose.model(
         currency: { type: String, required: true },
         rate: { type: Number, required: true },
         operatorId: { type: String, required: true },
-        playerId: { type: Number, required: true },
+        playerId: { type: String, required: true },
         siteId: { type: String, required: true },
         freeBet: { type: Boolean, default: false },
     })
@@ -49,7 +49,7 @@ const betLogsSchema = {
     clientSentTime: { type: Date },
     receivedTime: { type: Date },
 
-    playerId: { type: Number, required: true },
+    playerId: { type: String, required: true },
     operatorId: { type: String, required: true },
     siteId: { type: String, required: true },
     freeBet: { type: Boolean },
