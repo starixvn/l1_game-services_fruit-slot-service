@@ -158,7 +158,7 @@ export const symbolPositionsMapper = {
     watermelon3: [9],
     star: [20],
     star3: [21],
-    bell: [2],
+    bell: [2, 14],
     bell3: [0],
     orange: [1, 13],
     orange3: [12],
